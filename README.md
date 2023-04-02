@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+**Read in other languages: [rosyjski](README.md), [polski](README.pl.md).**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React homework template
 
-## Available Scripts
+Ten projekt został stworzony przy pomocy
+[Create React App](https://github.com/facebook/create-react-app). W celu
+zapoznania się z konfiguracją dodatkowych opcji
+[zobacz dokumentację](https://facebook.github.io/create-react-app/docs/getting-started).
 
-In the project directory, you can run:
+## Utworzenie repozytorium zgodnie z szablonem
 
-### `npm start`
+Wykorzystaj to repozytorium organizacji GoIT jako szablon do utworzenia
+repozytorium własnego projektu. W tym celu kliknij na przycisk
+`"Use this template"` i wybierz opcję `"Create a new repository"`, jak pokazano
+na rysunku.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Creating repo from a template step 1](./assets/template-step-1.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+W następnym kroku otworzy się strona utworzenia nowego repozytorium. Wypełnij
+pole nazwy i upewnij się, że repozytorium jest publiczne, a następnie kliknij na
+przycisk `"Create repository from template"`.
 
-### `npm test`
+![Creating repo from a template step 2](./assets/template-step-2.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Po utworzeniu repozytorium, należy przejść do jego ustawień w zakładce
+`Settings` > `Actions` > `General`, jak pokazano na rysunku.
 
-### `npm run build`
+![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Przescrolluj stronę do samego końca, w sekcji `«Workflow permissions»` wybierz
+opcję `«Read and write permissions»` i zaznacz pole w checkboksie. Jest to
+niezbędne do automatyzacji procesu deploymentu projektu.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Teraz masz własne repozytorium projektu, ze strukturą folderów i plików jak w
+szablonie. Pracuj z nim jak z innymi repozytoriami, klonuj je na swój komputer,
+pisz kod, rób commity i wysyłaj na GitHub.
 
-### `npm run eject`
+## Przygotowanie do pracy
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Upewnij się, że na komputerze zainstalowana jest wersja LTS Node.js.
+   [Ściągnij i zainstaluj](https://nodejs.org/en/), jeżeli trzeba.
+2. Utwórz bazowe zależności projektu przy pomocy polecenia `npm install`.
+3. Włącz tryb pracy, wykonując polecenie `npm start`.
+4. Przejdź w przeglądarce pod adres
+   [http://localhost:3000](http://localhost:3000). Ta strona będzie
+   automatycznie przeładowywać się po zapisaniu zmian w plikach projektu.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Produkcyjna wersja projektu będzie automatycznie poddana pracy lintera, budowana
+i deployowana na GitHub Pages, w gałęzi `gh-pages` za każdym razem, gdy
+aktualizuje się gałąź `main`, na przykład po bezpośrednim pushu lub przyjętym
+pull requeście. W tym celu należy w pliku `package.json` zredagować pole
+`homepage`, zamieniając `your_username` i `your_repo_name` na swoje nazwy i
+wysłać zmiany do GitHub.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```json
+"homepage": "https://your_username.github.io/your_repo_name/"
+```
 
-## Learn More
+Następnie należy przejść do ustawień repozytorium GitHub (`Settings` > `Pages`)
+i wydystrybuować wersję produkcyjną plików z folderu `/root` gałęzi `gh-pages`,
+jeśli nie zostało to wykonane automatycznie.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![GitHub Pages settings](./assets/repo-settings.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Status deploymentu
 
-### Code Splitting
+Status deploymentu ostatniego commitu wyświetla się jako ikona obok jego
+identyfikatora.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Żółty kolor** - wykonuje się zbudowanie i deployment projektu.
+- **Zielony kolor** - deploymnt zakończył się sukcesem.
+- **Czerwony kolor** - podczas pracy lintera, budowania lub deploymentu wystąpił
+  błąd.
 
-### Analyzing the Bundle Size
+Bardziej szczegółowe informacje o statusie można zobaczyć po kliknięciu na
+ikonkę i przejściu w wyskakującym oknie do odnośnika `Details`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Deployment status](./assets/deploy-status.png)
 
-### Making a Progressive Web App
+### Deployowana strona
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Po jakimś czasie, zazwyczaj kilku minut, zdeployowaną stronę będzie można
+zobaczyć pod adresem wskazanym w zredagowanej właściwości `homepage`. Tutaj na
+przykład znajduje się odnośnik do zdeployowanej strony w wersji dla tego
+repozytorium
+[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
 
-### Advanced Configuration
+Jeżeli otwiera się pusta strona, upewnij się, że w zakładce `Console` nie ma
+błędów związanych z nieprawidłowymi ścieżkami do plików CSS i JS projektu
+(**404**). Najprawdopodobniej wprowadzona została niewłaściwa wartość
+właściwości `homepage` w pliku `package.json`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Trasowanie
 
-### Deployment
+Jeżeli aplikacja wykorzystuje bibliotekę `react-router-dom` dla trasowania,
+należy uzupełniająco skonfigurować komponent `<BrowserRouter>`, przekazując w
+propsie `basename` dokładną nazwę twojego repozytorium. Slash na początku i na
+końcu łańcucha jest obowiązkowy.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```jsx
+<BrowserRouter basename="/your_repo_name/">
+  <App />
+</BrowserRouter>
+```
 
-### `npm run build` fails to minify
+## Jak to działa
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![How it works](./assets/how-it-works.png)
+
+1. Po każdym pushu do gałęzi `main` repozytorium GitHub, uruchamia się specjalny
+   skrypt (GitHub Action) z pliku `.github/workflows/deploy.yml`.
+2. Wszystkie pliki repozytorium kopiują się na serwer, gdzie projekt zostaje
+   zainicjowany i przechodzi pracę lintera oraz zbudowanie przed deploymentem.
+3. Jeżeli wszystkie kroki zakończyły się sukcesem, zbudowana wersja produkcyjna
+   plików projektu wysyłana jest do gałęzi `gh-pages`. W przeciwnym razie, w
+   logu wykonania skryptu zostanie wskazane z czym jest problem.
