@@ -19,7 +19,7 @@
   "author": "forckes",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build --public-url /goit-react-hw-01-components/",
+    "build": "react-scripts build --public-url /goit-react-hw-02-feedback/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:js": "eslint ."
